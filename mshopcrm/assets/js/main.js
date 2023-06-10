@@ -369,7 +369,7 @@ function newBlock(step){
   }else if(step === 'save'){
     $('.loading').fadeIn('fast')
     $.ajax({
-      url: "components/saveBlock.php",
+      url: "components/save-block.php",
       type: "POST",
       data: {
         title: $('#newBlock #titleBlockInput').val(), description: $('#newBlock #descriptionBlockInput').val() 
