@@ -1,28 +1,34 @@
 <?php
-	include('connect-database.php');
-	$pin = $_GET['pin'];
-	$password = $_GET['password'];
+    include('../components/connect-database.php');
+    include('functions.php');
 
-	$query = mysqli_query($conn, "SELECT * FROM `users_crm` WHERE `pin`='$pin'");
-	$verify = mysqli_num_rows($query);
+    $pin_receive = clearString($_POST["pin"]);
+    $password_receive = clearString($_POST["password"]);
 
-	if($verify !== false){
-		$object = mysqli_fetch_object($query);
-		$hash_db = $object->password;
+    if($pin_receive != "" AND $password_receive !== ""){
+        $stmt = $conn->prepare("SELECT * FROM users_crm WHERE (pin=:pin)");
+        $stmt->bindParam(':pin', $pin_receive);
+        $stmt->execute();
 
-		if (password_verify($password, $hash_db)) { 
-			session_start();
+        if($stmt->rowCount() == 1){
+            if($obj=$stmt->fetch()){
+                if(password_verify($password_receive, $obj['password'])){
+                    session_start();
 
-			$_SESSION['id_user'] = $object->id;
-			$_SESSION['name_user'] = $object->nome;
-			$_SESSION['image_user'] = $object->image;
-			$_SESSION['level_user'] = $object->level;
+                    $_SESSION['id_user'] = $obj['id'];
+					$_SESSION['name_user'] = $obj['nome'];
+					$_SESSION['image_user'] = $obj['image'];
+					$_SESSION['level_user'] = $obj['level'];
 
-			header("Location: ../index");
-		}else{
-			header("Location: ../login");
-		}
-	}else{
-		header("Location: ../login");
-	}
+                    header("Location: ../index");
+                }else{
+                    header("Location: ../login?error=ERR00003");
+                }
+            }
+        }else{
+            header("Location: ../login?error=ERR00002");
+        }
+    }else{
+        header("Location: ../login?error=ERR00001");
+    }
 ?>

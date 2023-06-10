@@ -1,12 +1,11 @@
 <?php
-	$host = "localhost";
-	$db = "mshop";
-	$user = "root";
-	$pass = "";
+    $user = "root";
+    $pass = "";
 
-	$conn = mysqli_connect($host, $user, $pass, $db);
-
-	if(!$conn){
-  		die("Connection failed: " . mysqli_connect_error());
-	}
+    try{
+        $conn = new PDO('mysql:host=localhost;dbname=mshop', $user, $pass);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }catch(PDOException $e) {
+        echo 'ERROR: ' . $e->getMessage();
+    }
 ?>

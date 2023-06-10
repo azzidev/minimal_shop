@@ -27,7 +27,7 @@
               </div>
               <div class="card mb-3">
                 <div class="card-body">
-                  <form class="row g-3 needs-validation" method="GET" action="components/auth-login" novalidate>
+                  <form class="row g-3 needs-validation" method="POST" action="components/auth-login" novalidate>
                     <div class="col-12">
                       <label for="yourUsername" class="form-label">PIN</label>
                       <div class="input-group has-validation">
