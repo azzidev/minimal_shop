@@ -361,7 +361,6 @@ function undoNotSeeAnymore(element){
 }
 
 $("#block-ordination").sortable();
-
 function newBlock(step){
   if(step === 'start'){
     $('#newBlock').fadeIn('fast')
