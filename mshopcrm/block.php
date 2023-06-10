@@ -70,10 +70,46 @@
                       <div class="accordion-item">
                         <h2 class="accordion-header" id="flush-headingOne">
                           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                            <b>Relacionados</b>
+                            <b>Exemplos</b>
                           </button>
                         </h2>
                         <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <h5 class="fw-bold">
+                                  Coleção Exclusiva de Produtos: Descubra a Melhor Seleção
+                                </h5>
+                                <p>
+                                  Descubra uma seleção requintada de produtos que combinam qualidade, sabor e custo-benefício.  
+                                </p>
+                              </div>
+                              <div class="col-md-4">
+                                <h5 class="fw-bold">
+                                  Liberte Sua Criatividade: Inspiração Artística
+                                </h5>
+                                <p>
+                                  Nossa coleção foi selecionada para ajudar você a explorar sua expressão artística e mergulhar em projetos criativos emocionantes. 
+                              </div>
+                              <div class="col-md-4">
+                                <h5 class="fw-bold">
+                                  Eleve Sua Rotina de Bem-Estar
+                                </h5>
+                                <p>
+                                  Descubra uma ampla gama de itens projetados para melhorar sua saúde física e mental. De produtos de skincare e aromaterapia a acessórios de meditação e bem-estar.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                            <b>Relacionados</b>
+                          </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                           <div class="accordion-body">
                             <a class="btn btn-primary rounded-pill" href="product">Adicionar produto</a>
                           </div>
